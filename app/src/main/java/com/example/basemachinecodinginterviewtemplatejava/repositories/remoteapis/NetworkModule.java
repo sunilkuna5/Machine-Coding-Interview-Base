@@ -4,6 +4,8 @@ import com.example.basemachinecodinginterviewtemplatejava.ApplicationScope;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.concurrent.TimeUnit;
+
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
@@ -50,6 +52,9 @@ public class NetworkModule {
   OkHttpClient okHttpClient(HttpLoggingInterceptor loggingInterceptor) {
     return new OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
+            .connectTimeout(20, TimeUnit.SECONDS)
+            .writeTimeout(20, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
             .build();
   }
 }
