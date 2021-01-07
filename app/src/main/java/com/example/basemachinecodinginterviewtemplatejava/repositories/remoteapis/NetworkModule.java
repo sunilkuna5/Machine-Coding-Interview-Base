@@ -1,5 +1,6 @@
 package com.example.basemachinecodinginterviewtemplatejava.repositories.remoteapis;
 
+import com.example.basemachinecodinginterviewtemplatejava.ApplicationScope;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -12,7 +13,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 @Module
-public class ApiServiceModule {
+public class NetworkModule {
 
   @Provides
   @ApplicationScope
